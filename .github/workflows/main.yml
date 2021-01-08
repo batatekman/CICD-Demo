@@ -17,10 +17,10 @@ jobs:
         uses: actions/setup-node@main
 
       - name: Install Dependencies
-        uses: npm install
+        run: npm install
 
       - name: Build
-        uses: npm run build
+        run: npm run build
 
       - name: Deploy
         uses: w9jds/firebase-action@main
