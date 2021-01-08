@@ -1,0 +1,30 @@
+name: Build and Deploy Firebase CICD-Demo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build and Deploy
+    runs-one: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+      
+      - name: Initialize Node
+        uses: actions/setup-node@main
+      
+      - name: Install Dependencies
+        uses: npm install
+      
+      - name: Build
+        uses: npm run build
+      
+      - name: Deploy
+        uses: w9jds/firebase-action@main
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
