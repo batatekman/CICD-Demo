@@ -254,7 +254,6 @@ nav ul li a:hover {
 #game-types-boxes .box {
   flex-basis: 25%;
   position: relative;
-
   height: 380px;
 }
 
