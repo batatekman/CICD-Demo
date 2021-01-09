@@ -81,7 +81,8 @@ strong {
 }
 
 .badge.rpg,
-.badge.adventure {
+.badge.adventure,
+.badge.action {
   background-color: #40abf5;
 }
 
